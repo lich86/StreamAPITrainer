@@ -19,9 +19,7 @@ public class StreamCollectorsTrainer {
 
         Map<String, List<Order>> ordersGroupedByProduct = orders.stream()
             .collect(Collectors.groupingBy(Order::getProduct));
-        ordersGroupedByProduct.forEach((k, v) -> {
-            System.out.println(v);
-        });
+        ordersGroupedByProduct.forEach((k, v) -> System.out.println(v));
 
         System.out.println();
 
@@ -36,9 +34,7 @@ public class StreamCollectorsTrainer {
                 (e1, e2) -> e1,
                 LinkedHashMap::new));
 
-        totalOrderCostSorted.forEach((k, v) -> {
-            System.out.println(k + ": " + v);
-        });
+        totalOrderCostSorted.forEach((k, v) -> System.out.println(k + ": " + v));
 
         Map.Entry<String, Double> threeMostExpensiveItems = totalOrderCostSorted.entrySet().stream()
             .limit(3)
