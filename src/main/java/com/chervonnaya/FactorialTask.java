@@ -12,7 +12,7 @@ public class FactorialTask extends RecursiveTask<Long> {
 
     @Override
     protected Long compute() {
-        if (n == 1) {
+        if (n == 1 || n == 0) {
             return 1L;
         } else {
             FactorialTask subTask = new FactorialTask(n - 1);
